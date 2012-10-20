@@ -3,8 +3,12 @@ import java.util.*;
 public final class Results{
 	
 	 //map from personality types to evaluations
-	 private static HashMap<String, PersonalityInfo[]> personalityToEval;
-	 //this map is initialized in a static initializer at the end of this file
+	//this map is initialized in a static initializer at the end of this file
+	 private static Map<String, PersonalityInfo[]> personalityToEval;
+	 
+	 //class constants for array indexes
+	 public static final int MAJORS_INDEX = 0;
+	 public static final int FACTS_INDEX = 1;
 	 
 	 public enum EvalType {
 		 MAJORS,
@@ -24,13 +28,14 @@ public final class Results{
 	 
 	 /**
 	  * Consumes a personality type string and
-	  * returns a string containing the standard evaluation for
+	  * returns the standard evaluation for
 	  * that type of personality
 	  *  
 	  *  @param personality A 4-character string describing a personality type
-	  *  @returns a string containing the evaluation for the personality
+	  *  @returns an array of PersonalityInfo objects
+	  *           containing the evaluation for the personality
 	  */
-	 public static PersonalityInfo[] getPrimaryEvalString(String personality){
+	 public static PersonalityInfo[] getPrimaryEval(String personality){
 		 return personalityToEval.get(personality);
 	 }
 	 
@@ -476,7 +481,7 @@ public final class Results{
 	 
 	//static initializer
 		 static{
-			 personalityToEval = new HashMap<String, PersonalityInfo[]>();
+			 personalityToEval = new Hashtable<String, PersonalityInfo[]>();
 			 //maps personality strings to their corresponding evaluation strings
 			 personalityToEval.put("ISTJ", ISTJ);
 			 personalityToEval.put("ISFJ", ISFJ);
