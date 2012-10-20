@@ -11,12 +11,12 @@ function initialize() {
 	// Add form validation.
 	var form = $("#mbtiform")[0];
 	form.addEventListener("submit", function(e) {
-		var err = $("#errormessage");
+		var err = $("#errormessage")[0];
 		// If it doesn't validate then don't submit.
 		if(!validate()) {
 			e.preventDefault();
 			err.innerHTML = "Please make sure you have picked your "
-				+ "personality type and percentage (0-100) for each area.";
+				+ "personality type and percentage (0-100) for each field.";
 			return false;
 		}
 		
@@ -32,8 +32,20 @@ function initialize() {
 			if (child.value == "") {
 				$(child).remove();
 			}
+			
+			// Set the string after percent.
+			$(event.target).parents(".type").find(".percentlabel")[0].innerHTML = event.target.value;
 		})
-	})
+	});
+	
+	///TODO remove
+	var elements = $(".percentbox").each(function(index, element) {
+		element.value = 45;
+	});
+	
+	elements = $(".typeselect").each(function(index, element) {
+		element.selectedIndex = 2;
+	});
 };
 
 /*
