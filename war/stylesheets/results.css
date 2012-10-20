@@ -3,6 +3,9 @@ body {
 	margin: 0 auto;
 	width: 65%;
 	min-width: 940px;
+}
+
+.dark {
 	background-color: #E8E8E8;
 }
 
@@ -10,26 +13,18 @@ body {
 	box-shadow: 0 0 4px 2px #60B0FF;
 }
 
-h2 {
+h1 {
+	float: left;
+}
+
+h1, h2 {
 	font-family: Ubuntu, Helvetica, Arial, sans-serif;
-	font-size: 20px;
 	
 	margin-bottom: 0;
 }
 
-.line {
-	display: block;
-	padding: 0;
-	margin: 0;
-	width: 730px;
-}
-
-#majorsline {
-	box-shadow: 0 0 4px 2px #FF6103;
-}
-
-ul {
-	list-style-type: none;	
+h2 {
+	font-size: 20px;
 }
 
 li {
@@ -38,3 +33,50 @@ li {
 	
 	font-size: 16px;
 }
+
+.light {
+	background-color: #F0F0F0;	
+}
+
+.line {
+	display: block;
+	padding: 0;
+	margin: 0;
+	z-index: 3;
+}
+
+.line, .container {
+	width: 730px;
+}
+
+#majorsline, #nextstepsline {
+	box-shadow: 0 0 4px 2px #FF6103;
+}
+
+#nextstepstext {
+	margin: 4px 0 0 20px;
+}
+#nextsteps p {
+	margin: 0;
+	padding: 5px 0 5px 0;
+}
+
+#personality {
+	float: right;
+	margin-right: 100px;
+}
+
+#personalitytype {
+	overflow: auto;
+}
+
+span {
+	font-weight: 600;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0 0 0 20px;
+	margin: 4px 0 0 0;
+}
+

@@ -61,15 +61,17 @@
 			 	} else {
 		 			//POST method is used and all fields are validated
 			 		%>
-					  <p>Your personality type is:</p>
-					<%
-						//personality string (a concatenation of the four personality dimensions)
-						String personality = "";
-						for(int i = 0; i < 4; i++){
-							personality += selections[i];
-						}
-          %>
-          <%= personality %>
+					<div id="personalitytype">	
+						<h1>Your personality type is:</h1>
+						<%
+							//personality string (a concatenation of the four personality dimensions)
+							String personality = "";
+							for(int i = 0; i < 4; i++){
+								personality += selections[i];
+							}
+						%>
+						<p id="personality"><%= personality %><p>
+					</div>
 					<%
 						//array storing evaluation objects for this type of personality
 						//use MAJORS_INDEX and FACTS_INDEX (class constants in Results)
@@ -164,36 +166,58 @@
           
           if (valid && validateBias(bias)) {
             %>
-  					
-  					<div id="nextsteps" class="container">
-  						<h2 id="nextstepsheader" class="header">Nexts step to choosing your major: </h2>
-  						<div id="nextstepsline" class="line"></div>
-  							<p>
-  								Hopefully the above reccomendations give you some potential majors to consider.
-  								Here are some additional ideas to further expand your search for the perfect major.
-  							</p>
-  							<p>
-  								<span>Talk to your counselor or advisor.</span>
-  								They're experts at this.
-  								They know what it takes to do certain majors.
-  								So, schedule a meeting with your counselor or advisor.
-  								Tell them your strengths and weaknesses as well as your interests.
-  								Be specific and honest.
-  								They'll be able to recommend specific courses or majors that excite you.
-  							</p>
-  							<p>
-  								If you disagree with your personality questionnaire results, don't fret!
-  								It's <em>just</em> a questionnaire.
-  								Moreover, if some of your percentages were low, then the questionnaire didn't notice a strong preference for one personality sub-type over the other.
-  								This is perfectly normal.
-  								It just means you your results were on the border between different personality types.
-  								Here's a few other personality types that closely match your current results:
-  								<ul>
-  								</ul>
-  							<p>
-  								
-  							</p>
-  					</div>
+				<div id="nextsteps" class="container">
+					<h2 id="nextstepsheader" class="header">Next Steps to Choosing a Major: </h2>
+					<div id="nextstepsline" class="line"></div>
+  					<div id="nextstepstext">
+						<p class="light">
+							Hopefully the above recommendations give you some potential majors to consider.
+							Here are some additional ideas to further expand your search for the perfect major.
+						</p>
+						<p class="dark">
+							<span>Talk to your counselor or advisor.</span>
+							They're experts at this.
+							They know what it takes to do certain majors.
+							So, schedule a meeting with your counselor or advisor.
+							Tell them your strengths and weaknesses as well as your interests.
+							Be specific and honest.
+							They'll be able to recommend specific courses or majors that excite you.
+						</p>
+						<p class="light">
+							<span>Ask current college students.</span>
+							They are the real experts, especially the upperclassman.
+							Best of all, they're all choosing (or have already chosen) their majors, too.
+							So, they can share the questions they considered during their decision-making process, and how they eventually made their decision.
+							If you don't know any college students, consider searching online for students posting their opinions/experiences.
+						</p>
+						<p class="dark">
+							<span>Talk to professionals.</span>
+							Ask them exactly what their jobs entail and how their majors relate to their careers.
+							You may be surprised to learn that some of them didn't even major in anything related to their current profession.
+							Learning about the paths others took to get to where they are can be very valuable.
+						</p>
+						<p class="light">
+							<span>Relax.</span>
+							College can (and probably will) be very stressful at times.
+							Choosing your major is often the first exposure high school students get to such levels of stress.
+							Remember, at the end of the day, your major is not you.
+							It does not determine your life.
+							Choose a subject that interests you and relates to your long-term career goals.
+							You can always change majors, change careers, or go back to school and study another subject.
+						</p>
+						<p class="dark">
+							<span>Disagree with you results?</span>
+							If you disagree with your personality questionnaire results, don't fret!
+							It's <em>just</em> a questionnaire.
+							Moreover, if some of your percentages were low, then the questionnaire didn't notice a strong preference for one personality sub-type over the other.
+							This is perfectly normal.
+							It just means you your results were on the border between different personality types.
+							Here's a few other personality types that closely match your current results:
+							<ul>
+							</ul>
+						</p>
+					</div>
+				</div>
   					<%
           }
 				}
