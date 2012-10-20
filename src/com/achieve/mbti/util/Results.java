@@ -3,11 +3,23 @@ import java.util.*;
 public final class Results{
 	
 	 //map from personality types to evaluations
-	 private static Map<String, String> personalityToEval;  
+	 private static Map<String, List<String>> personalityToEval;
+	 //this map is initialized in a static initializer at the end of this file
 	 
-	 //static initializer
-	 static{
-		 personalityToEval = new HashMap<String, String>(); 
+	 public enum EvalType {
+		 MAJORS,
+		 FACTS
+	 }
+	 
+	 public final class PersonalityInfo {
+		 public final List<String> info;
+		 
+		 public final EvalType feedbackType;
+		 
+		 PersonalityInfo(List<String> info, EvalType evalType) {
+			 this.info = info;
+			 this.feedbackType = evalType;
+		 }
 	 }
 	 
 	 /**
@@ -22,29 +34,38 @@ public final class Results{
 		 return personalityToEval.get(personality);
 	 }
 	 
-	 public static final List<String> ISTJ = Arrays.asList(new String[] {
-	     "Accounting",
-	 	 "Biology",
-	 	 "Criminal Justice",
-	 	 "Finance",
-	 	 "Exercise Science",
-	 	 "Geology",
-	 	 "Medical Technology",
-	 	 "Civil engineering",
-	 	 "Among the four highest personality types in college GPA.",
-	 	 "Overrepresented among bank officers and financial managers.",
-	 	 "One of the top 2 types among industrial/technical teachers.",
-	 	 "Higher on deductive reasoning than dominant Thinking or Feeling types, with other dominant Sensing types.",
-	 	 "Academic subjects preferred: math, practical skills.",
-	 	 "More frequent among African Americans.",
-	 	 "In national sample, highest of all types in liking work environments where “Everything is done by the book”, and one of 3 highest types in liking “Toeing the line”;",
-	 	 "Lowest of all types in liking work environments with “People of different backgrounds.”",
-	 	 "In national sample, dissatisfied with “Promotions” in their jobs.",
-	 	 "Overrepresented among both male and female small business owners compared with national sample.",
-	 	 "With ISFJs, far outnumber dominant extraverted Sensing types among chronic pain patients.",
-	 	 "Overrepresented among men with chronic pain - accounted for 38% of sample studied.",
-	 	 "Overrepresented among men at risk for heart attack - more than 3.5 times the proportion in Myers’ high school sample.",
-	 	 "One of two most overrepresented female types in a substance abuse program."});
+	 // PersonalityInfo pi = get it somehow.
+	 //	if (pi.evalType == EvalType.MAJORS) {
+	 //		process the list as if it is a list of majors
+	 //	} else 
+	 //
+	 public static final PersonalityInfo[] ISTJ = new PersonalityInfo[]{
+		 new PersonalityInfo(Arrays.asList(new String[] {
+		     "Accounting",
+		 	 "Biology",
+		 	 "Criminal Justice",
+		 	 "Finance",
+		 	 "Exercise Science",
+		 	 "Geology",
+		 	 "Medical Technology",
+		 	 "Civil engineering"}), EvalType.MAJORS),
+		 	 
+		 new PersonalityInfo(Arrays.asList( new String[] {
+		 	 "Among the four highest personality types in college GPA.",
+		 	 "Overrepresented among bank officers and financial managers.",
+		 	 "One of the top 2 types among industrial/technical teachers.",
+		 	 "Higher on deductive reasoning than dominant Thinking or Feeling types, with other dominant Sensing types.",
+		 	 "Academic subjects preferred: math, practical skills.",
+		 	 "More frequent among African Americans.",
+		 	 "In national sample, highest of all types in liking work environments where “Everything is done by the book”, and one of 3 highest types in liking “Toeing the line”;",
+		 	 "Lowest of all types in liking work environments with “People of different backgrounds.”",
+		 	 "In national sample, dissatisfied with “Promotions” in their jobs.",
+		 	 "Overrepresented among both male and female small business owners compared with national sample.",
+		 	 "With ISFJs, far outnumber dominant extraverted Sensing types among chronic pain patients.",
+		 	 "Overrepresented among men with chronic pain - accounted for 38% of sample studied.",
+		 	 "Overrepresented among men at risk for heart attack - more than 3.5 times the proportion in Myers’ high school sample.",
+		 	 "One of two most overrepresented female types in a substance abuse program."}),
+		 	 EvalType.FACTS)};
 
 	 public static final List<String> ISFJ = Arrays.asList(new String[] {
 		 "Criminal Justice",
@@ -376,5 +397,26 @@ public final class Results{
 	 	 "Ranked 1st of all 16 types in using physical coping resources.",
 	 	 "In national sample, highest in coping with stress by “Trying to think of options.”",
 	 	 "In national sample, ranked 2nd highest in “No” and 4th highest in “Not sure” re: “Belief in higher spiritual power.”"});
-
+	 
+	//static initializer
+		 static{
+			 personalityToEval = new HashMap<String, String>();
+			 //maps personality strings to their corresponding evaluation strings
+			 personalityToEval.put("ISTJ", ISTJ);
+			 personalityToEval.put("ISFJ", ISFJ);
+			 personalityToEval.put("INFJ", INFJ);
+			 personalityToEval.put("INTJ", INTJ);
+			 personalityToEval.put("ISTP", ISTP);
+			 personalityToEval.put("ISFP", ISFP);
+			 personalityToEval.put("INFP", INFP);
+			 personalityToEval.put("INTP", INTP);
+			 personalityToEval.put("ESTP", ESTP);
+			 personalityToEval.put("ESFP", ESFP);
+			 personalityToEval.put("ENFP", ENFP);
+			 personalityToEval.put("ENTP", ENTP);
+			 personalityToEval.put("ESTJ", ESTJ);
+			 personalityToEval.put("ESFJ", ESFJ);
+			 personalityToEval.put("ENFJ", ENFJ);
+			 personalityToEval.put("ENTJ", ENTJ);
+		 }
 }
