@@ -15,17 +15,22 @@ body {
 
 h1 {
 	float: left;
-	margin: 0 0 15px 0;
 }
 
 h1, h2 {
 	font-family: Ubuntu, Helvetica, Arial, sans-serif;
 }
 
+h1, h2#majorsheader {
+	margin: 0;
+}
+
 h2 {
 	font-size: 20px;
 	margin: 10px 0 0 0;
 }
+
+
 
 li {
 	display: block;
@@ -63,6 +68,9 @@ li {
 #personality {
 	float: right;
 	margin-right: 100px;
+	margin: 0;
+	font-size: 56pt;
+	color: #60B0FF;
 }
 
 #personalitytype {
