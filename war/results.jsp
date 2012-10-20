@@ -61,7 +61,7 @@
 			 	} else {
 		 			//POST method is used and all fields are validated
 			 		%>
-					<div id="personalitytype">	
+					<div id="personalitytype" class="container">	
 						<h1>Your personality type is:</h1>
 						<%
 							//personality string (a concatenation of the four personality dimensions)
@@ -70,7 +70,7 @@
 								personality += selections[i];
 							}
 						%>
-						<p id="personality"><%= personality %><p>
+						<h1 id="personality"><%= personality %><h1>
 					</div>
 					<%
 						//array storing evaluation objects for this type of personality
@@ -172,7 +172,7 @@
   					<div id="nextstepstext">
 						<p class="light">
 							Hopefully the above recommendations give you some potential majors to consider.
-							Here are some additional ideas to further expand your search for the perfect major.
+							Here are some additional ideas to further expand your search for the perfect major:
 						</p>
 						<p class="dark">
 							<span>Talk to your counselor or advisor.</span>
