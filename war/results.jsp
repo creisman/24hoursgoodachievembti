@@ -11,8 +11,17 @@
 	<body>
 		
 		<%!
-			public boolean validate(){
-				return true;
+			public boolean validateSelections(String[] selections) {
+  			if (!selections[0].equals("E") && !selections[0].equals("I")) {
+          return false;
+        }
+  			if (!selections[1].equals("S") && !selections[1].equals("N")) {
+          return false;
+        }
+  			if (!selections[2].equals("T") && !selections[2].equals("F")) {
+          return false;
+        }
+  			return !selections[3].equals("J") && !selections[3].equals("P");
 			}
 			
 
@@ -26,9 +35,10 @@
 			if(!request.getMethod().equals("POST")){
 				//this page was accessed with a method other than HTTP POST
 		 		%>
-		 		<p>This page can only be accessed via POST request</p>
-		 		<p>Please go to <a href="/index.html">this page</a> to access this page properly</p>
-		 		<%
+		 		<p>This page can only be accessed via a POST request.</p>
+        <p>Please use <a href="/index.html">this page</a> to access the page properly.</p>
+        <%
+        response.sendError(405);
 		 	} else {
 		 		//the array storing options values from the dropdown list
 		 		String[] selections = new String[4];
@@ -45,15 +55,16 @@
 		 		bias[0] = request.getParameter("EorIPercent");
 		 		bias[1] = request.getParameter("SorNPercent");
 		 		bias[2] = request.getParameter("TorFPercent");
-		 		bias[3] = request.getParameter("JorPPercent");		 		
+		 		bias[3] = request.getParameter("JorPPercent");
 		 		
-		 		if (!validate()){
+		 		if (!validateSelections(selections)){
 			 		%>
 			 		<%-- ERROR HANDLING HERE --%>
 			 		<%
+          response.sendError(400);
 			 	} else {
 		 			//POST method is used and all fields are validated
-			 		%>		 		
+			 		%>
 			
 					<p>Your personality type is:</p>
 					<%-- print personality types and percentages here --%>
