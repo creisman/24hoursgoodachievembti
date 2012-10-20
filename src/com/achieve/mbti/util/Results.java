@@ -1,11 +1,20 @@
 package com.achieve.mbti.util;
-
+import java.util.*;
 public class Results{
-
+	
+	 //map from personality types to evaluations
+	 private static Map<String, String> personalityToEval;  
+	 
+	 //static initializer
+	 static{
+		 personalityToEval = new HashMap<String, String>(); 
+	 }
+	 
 	 public static final String ISTJ = "Accounting\n" + 
 	 	 "Biology\n" + 
 	 	 "Criminal Justice\n" + 
 	 	 "Finance\n" + 
+	 	 
 	 	 "Exercise Science\n" + 
 	 	 "Geology\n" + 
 	 	 "Medical Technology\n" + 
