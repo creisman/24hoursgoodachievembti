@@ -1,14 +1,15 @@
 <!doctype html>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>Achieve - Find Your Major</title>
-<form method="POST" action="results.jsp">
+<script src="/scripts/index.js"></script>
+<form id="mbtiform" method="POST" action="results.jsp">
   <p>
     Extrovert or Introvert:<br /> <select name="EorI">
       <option value="">Choose one...</option>
       <option value="Extrovert">E (Extrovert)</option>
       <option value="Introvert">I (Introvert)</option>
     </select>
-    <input maxlength="2" size="2" name="EorIPercent" />% <span id="EI">(E or I)</span>
+    <input id="EorIPercent" maxlength="2" size="2" name="EorIPercent" />% <span id="EI">(E or I)</span>
   </p>
   <p>
     Intuitive or Sensing:<br /> <select name="SorN">
@@ -16,7 +17,7 @@
       <option value="Sensing">S (Sensing)</option>
       <option value="Intuitive">N (Intuitive)</option>
     </select>
-    <input maxlength="2" size="2" name="SorNPercent" />% <span id="SN">(S or N)</span>
+    <input id="SorNPercent" maxlength="2" size="2" name="SorNPercent" />% <span id="SN">(S or N)</span>
   </p>
   <p>
     Thinking or Feeling:<br /> <select name="TorF">
@@ -24,7 +25,7 @@
       <option value="Thinking">T (Thinking)</option>
       <option value="Feeling">F (Feeling)</option>
     </select>
-    <input maxlength="2" size="2" name="TorFPercent" />% <span id="TF">(T or F)</span>
+    <input id="TorFPercent" maxlength="2" size="2" name="TorFPercent" />% <span id="TF">(T or F)</span>
   </p>
   <p>
     Judging or Perceiving:<br /> <select name="JorP">
@@ -32,9 +33,9 @@
       <option value="Judging">J (Judging)</option>
       <option value="Perceiving">P (Perceiving)</option>
     </select>
-    <input maxlength="2" size="2" name="JorPPercent" />% <span id="JP">(J or P)</span>
+    <input id="JorPPercent" maxlength="2" size="2" name="JorPPercent" />% <span id="JP">(J or P)</span>
   </p>
   <div>
-    <input type="submit" value="submit" />
+    <input id="submit" type="submit" value="submit" />
   </div>
 </form>
