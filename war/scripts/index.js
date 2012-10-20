@@ -5,7 +5,7 @@ window.onload = function() {
 /*
  * Adds a validator to the form so it won't submit if there's an error. It also
  * adds a listener on the drop downs so they delete the default option if it's
- * changed.
+ * changed and also update the percentage label.
  */
 function initialize() {
 	// Add form validation.
@@ -24,7 +24,7 @@ function initialize() {
 		return true;
 	});
 	
-	// Remove the default option from checkboxes.
+	// Remove the default option from checkboxes and update the percentage label.
 	$(".typeselect").each(function(index, element) {
 		element.addEventListener("change", function(event) {
 			// Remove the default decision if still present.
