@@ -26,7 +26,7 @@
     
 			
 		  public boolean validateBias(int[] bias) {
-        return true;
+        return isIntPercent(bias[0]) && isIntPercent(bias[1]) && isIntPercent(bias[2]) && isIntPercent(bias[3]);
       }
 
 			//checks whether a number is between 0 to 100 (inclusive)
@@ -144,42 +144,44 @@
 						%>
 						</ul>
 					</div>
+          <%
           //the array storing the bias percentage values
           int[] bias       = new int[4];
           
           //populate bias
           try {
-            String bias = request.getParameter("EorIPercent");
-            if (bias != null) {
-              bias[0] = Integer.parseInt(bias);
+            String biasStr = request.getParameter("EorIPercent");
+            if (biasStr != null) {
+              bias[0] = Integer.parseInt(biasStr);
             } else {
-              return false;
+              return;
             }
-            bias = request.getParameter("SorNPercent");
-            if (bias != null) {
-              bias[1] = Integer.parseInt(bias);
+            biasStr = request.getParameter("SorNPercent");
+            if (biasStr != null) {
+              bias[1] = Integer.parseInt(biasStr);
             } else {
-              return false;
+              return;
             }
-            bias = request.getParameter("TorFPercent");
-            if (bias != null) {
-              bias[2] = Integer.parseInt(bias);
+            biasStr = request.getParameter("TorFPercent");
+            if (biasStr != null) {
+              bias[2] = Integer.parseInt(biasStr);
             } else {
-              return false;
+              return;
             }
-            bias = request.getParameter("JorPPercent");
-            if (bias != null) {
-              bias[3] = Integer.parseInt(bias);
+            biasStr = request.getParameter("JorPPercent");
+            if (biasStr != null) {
+              bias[3] = Integer.parseInt(biasStr);
             } else {
-              return false;
+              return;
             }
           } catch(NumberFormatException e) {
-            return false;
+            return;
           }
           
           if (!validateBias(bias)) {
-            return false;
+            return;
           }
+          %>
 					
 					<div id="nextsteps" class="container">
 						<h2 id="nextstepsheader" class="header">Nexts step to choosing your major: </h2>
