@@ -1,6 +1,6 @@
 package com.achieve.mbti.util;
 import java.util.*;
-public class Results{
+public final class Results{
 	
 	 //map from personality types to evaluations
 	 private static Map<String, String> personalityToEval;  
@@ -8,6 +8,18 @@ public class Results{
 	 //static initializer
 	 static{
 		 personalityToEval = new HashMap<String, String>(); 
+	 }
+	 
+	 /**
+	  * Consumes a personality type string and
+	  * returns a string containing the standard evaluation for
+	  * that type of personality
+	  *  
+	  *  @param personality A 4-character string describing a personality type
+	  *  @returns a string containing the evaluation for the personality
+	  */
+	 public static String getPrimaryEvalString(String personality){
+		 return personalityToEval.get(personality);
 	 }
 	 
 	 public static final String ISTJ = "Accounting\n" + 
