@@ -35,26 +35,26 @@ h3, #submit {
 	padding: 5px 0 5px 3px;
 }
 
-p {
-	font-size: 14pt;
-	font-weight: 500;
-	
+.type {
 	margin: 10px 0 0 0;
 }
 
 #results {
+	font-size: 14pt;
+  font-weight: 500;
+	
 	width: 400px;
 	background-color: #E8E8E8;
 	overflow: auto;
 	
 	
 	-moz-box-shadow: 0 0px 5px #000;
-    -webkit-box-shadow: 0 0px 5px #000;
-    box-shadow: 0 0px 5px #000;
- 
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
+  -webkit-box-shadow: 0 0px 5px #000;
+  box-shadow: 0 0px 5px #000;
+
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
 }
 
 #submit {
@@ -65,24 +65,24 @@ p {
  	font-weight: 700;
  	font-size: 14pt;
  	
-    padding: 5px 10px 5px 10px;
-    border: 1px solid #999;
- 
-    text-shadow: 0px 1px 1px #666;
-    text-decoration: none;
- 
-    -moz-box-shadow: 0 1px 3px #000;
-    -webkit-box-shadow: 0 1px 3px #000;
-    box-shadow: 0 1px 3px #000;
- 
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #999;
 
-    cursor: pointer;
+  text-shadow: 0px 1px 1px #666;
+  text-decoration: none;
+
+  -moz-box-shadow: 0 1px 3px #000;
+  -webkit-box-shadow: 0 1px 3px #000;
+  box-shadow: 0 1px 3px #000;
+
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+
+  cursor: pointer;
 }
 
-.type {
+.typeheader {
 	font-size: 16pt;
 	font-weight: 600;
 }
@@ -92,5 +92,5 @@ p {
 }
 
 #submit:hover {
-    border: 1px solid #FFF;
+  border: 1px solid #FFF;
 }

@@ -2,19 +2,40 @@ window.onload = function() {
 	initialize();
 };
 
+/*
+ * Adds a validator to the form so it won't submit if there's an error. It also
+ * adds a listener on the drop downs so they delete the default option if it's
+ * changed.
+ */
 function initialize() {
 	// Add form validation.
 	var form = $("#mbtiform")[0];
 	form.addEventListener("submit", function(e) {
 		// If it doesn't validate then don't submit.
-		console.log(validate());
 		if(!validate()) {
 			e.preventDefault();
 		}
 		//TODO this needs an error message.
 	});
+	
+	// Remove the default option from checkboxes.
+	$(".typeselect").each(function(index, element) {
+		element.addEventListener("change", function(event) {
+			// Remove the default decision if still present.
+			var child = event.target.children[0];
+			if (child.value == "") {
+				$(child).remove();
+			}
+		})
+	})
 };
 
+/*
+ * Tests that all the textboxes contain a number between 0 and 100 and that the
+ * drop downs do not contain the default value. Adds the "error" class to all
+ * elements that fail the test and then returns true if all passed, or false if
+ * one or more failed.
+ */
 function validate() {
 	var valid = true;
 	var elements = $(".percentbox");
@@ -23,15 +44,20 @@ function validate() {
 		if (isNaN(val) || element.value < 0 || element.value > 100) {
 			$(element).addClass("error");
 			valid = false;
+		} else {
+			// Remove the error if they've fixed it.
+			$(element).removeClass("error");
 		}
 	});
 
 	elements = $(".typeselect");
 	elements.each(function(i, element) {
-		console.log(element.value);
 		if (element.value == "") {
 			$(element).addClass("error");
 			valid = false;
+		} else {
+			// Remove the error if they've fixed it.
+			$(element).removeClass("error");
 		}
 	});
 
