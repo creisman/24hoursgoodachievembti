@@ -1,0 +1,40 @@
+body {
+	font-family: 'Vollkorn', Georgia, Times, serif;
+	margin: 0 auto;
+	width: 65%;
+	min-width: 940px;
+	background-color: #E8E8E8;
+}
+
+#factsline {
+	box-shadow: 0 0 4px 2px #60B0FF;
+}
+
+h2 {
+	font-family: Ubuntu, Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	
+	margin-bottom: 0;
+}
+
+.line {
+	display: block;
+	padding: 0;
+	margin: 0;
+	width: 730px;
+}
+
+#majorsline {
+	box-shadow: 0 0 4px 2px #FF6103;
+}
+
+ul {
+	list-style-type: none;	
+}
+
+li {
+	display: block;
+	padding: 4px 0 4px 2px;
+	
+	font-size: 16px;
+}

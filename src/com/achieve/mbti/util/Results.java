@@ -48,12 +48,12 @@ public final class Results{
 		 new Results.PersonalityInfo(Arrays.asList(new String[] {
 		    "Accounting",
 		 	"Biology",
+		 	"Civil engineering",
 		 	"Criminal Justice",
-		 	"Finance",
 		 	"Exercise Science",
+		 	"Finance",
 		 	"Geology",
-		 	"Medical Technology",
-		 	"Civil engineering"}),
+		 	"Medical Technology"}),
 		 	Results.EvalType.MAJORS),
 		 	 
 		 new Results.PersonalityInfo(Arrays.asList( new String[] {
@@ -76,10 +76,10 @@ public final class Results{
 	 public static final PersonalityInfo[] ISFJ =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
 			 "Criminal Justice",
-		 	 "Psychology",
 		 	 "Finance",
 		 	 "History",
 		 	 "Medical Technology",
+		 	 "Psychology",
 		 	 "Religious Studies",
 		 	 "Social Work"}),
 		 	 EvalType.MAJORS),
@@ -107,12 +107,11 @@ public final class Results{
 		 new PersonalityInfo(Arrays.asList(new String[] {
 			 "Art",
 		 	 "Communication",
-		 	 "Psychology",
-		 	 "Latin American",
-		 	 "Studies",
+		 	"Latin American Studies",
 		 	 "Marketing",
 		 	 "Nursing",
 		 	 "Physical Education",
+		 	 "Psychology",		 	 
 		 	 "Sociology",
 		 	 "Urban Studies"}),
 		 	 EvalType.MAJORS),
@@ -135,14 +134,14 @@ public final class Results{
 	 public static final PersonalityInfo[] INTJ =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
 			 "Biochemistry",
-		 	 "Psychology",
+		 	 "Business Management",
+		 	 "Environmental Sciences",
 		 	 "Finance",
 		 	 "Mathematics",
+		 	 "Psychology",
 		 	 "Sociology",
-		 	 "Urban Studies",
-		 	 "Environmental Sciences",
-		 	 "Business Management",
-		 	 "Technology"}),
+		 	 "Technology",
+		 	 "Urban Studies"}),
 		 	 EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
@@ -164,13 +163,13 @@ public final class Results{
 	 public static final PersonalityInfo[] ISTP =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
 			 "Biology",
-		 	 "Finance",
-		 	 "Law and Social",
-		 	 "Thought",
-		 	 "Geology",
 		 	 "Economics",
+		 	 "Finance",
+		 	 "Geology",
+		 	 "Law and Social",
+		 	 "Mathematics",
 		 	 "Theatre",
-		 	 "Mathematics"}),
+		 	 "Thought"}),
 		 	 EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
@@ -191,12 +190,12 @@ public final class Results{
 	 public static final PersonalityInfo[] ISFP =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
 			 "Art",
-		 	 "Psychology",
 		 	 "Exercise Science",
-		 	 "Law and Social",
-		 	 "Thought",
 		 	 "Foreign Languages",
-		 	 "Nursing"}),
+		 	 "Law and Social",
+		 	 "Nursing",
+		 	 "Psychology",
+		 	 "Thought"}),
 		 	 EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
@@ -216,10 +215,10 @@ public final class Results{
 
 	 public static final PersonalityInfo[] INFP =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
-			 "Management",
-		 	 "History",
-		 	 "Medical Technology",
 		 	 "Foreign Languages",
+		 	 "History",
+			 "Management",
+		 	 "Medical Technology",
 		 	 "Music",
 		 	 "Psychology",
 		 	 "Religious Studies",
@@ -243,14 +242,14 @@ public final class Results{
 	 public static final PersonalityInfo[] INTP =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
 			 "Chemistry",
-		 	 "Information Systems",
 		 	 "Criminal Justice",
 		 	 "Economics",
 		 	 "Finance",
 		 	 "History",
+		 	 "Information Systems",
 		 	 "Legal Secretarial",
-		 	 "Technology",
-		 	 "Physics"}),
+		 	 "Physics",
+		 	 "Technology"}),
 		 	 EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
@@ -273,9 +272,9 @@ public final class Results{
 		 new PersonalityInfo(Arrays.asList(new String[] {
 			 "Art",
 		 	 "Biology",
+		 	 "Environmental Studies",
 		 	 "Information Systems",
 		 	 "Medical Technology",
-		 	 "Environmental Studies",
 		 	 "Theatre"}),
 		 	 EvalType.MAJORS),
 	 	 
@@ -293,13 +292,13 @@ public final class Results{
 
 	 public static final PersonalityInfo[] ESFP =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
-			 "Psychology",
 		 	 "Exercise Science",
 		 	 "Geology",
 		 	 "Nursing",
-		 	 "Speech Language",
 		 	 "Pathology",
-		 	 "Social Work"}),
+			 "Psychology",
+		 	 "Social Work",
+		 	 "Speech Language"}),
 		 	 EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
@@ -321,12 +320,12 @@ public final class Results{
 			 "Anthropology",
 		 	 "Art",
 		 	 "Chemistry",
+		 	 "Communication",
 		 	 "Early Childhood",
 		 	 "Education",
-		 	 "Marketing",
 		 	 "Foreign Languages",
-		 	 "Sociology",
-		 	 "Communication"}),
+		 	 "Marketing",
+		 	 "Sociology"}),
 		 	 EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
@@ -345,14 +344,14 @@ public final class Results{
 
 	 public static final PersonalityInfo[] ENTP =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
-			 "Information Technology",
 		 	 "Communication",
 		 	 "Criminal Justice",
 		 	 "Finance",
-		 	 "Mechanical Engineering",
-		 	 "Technology",
+		 	 "History",
+			 "Information Technology",
 		 	 "Marketing",
-		 	 "History"}),
+		 	 "Mechanical Engineering",
+		 	 "Technology"}),
 		 	 EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
@@ -373,13 +372,13 @@ public final class Results{
 
 	 public static final PersonalityInfo[] ESTJ =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
-			 "Mechanical",
+			 "Accounting",
 		 	 "Engineering",
-		 	 "Public Relations",
-		 	 "Music",
-		 	 "Accounting",
 		 	 "Finance",
-		 	 "Political Science"}),
+			 "Mechanical",
+		 	 "Music",
+		 	 "Political Science",
+		 	 "Public Relations"}),
 		 	 EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
@@ -401,14 +400,14 @@ public final class Results{
 
 	 public static final PersonalityInfo[] ESFJ =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
-			"Psychology",
 		 	"Marketing",
 		 	"Nursing",
+		 	"Pathology",
+			"Psychology",
 		 	"Physical Education",
 		 	"Religious Studies",
 		 	"Social Work",
-		 	"Speech Language",
-		 	"Pathology"}),
+		 	"Speech Language"}),
 		 	EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
@@ -429,12 +428,12 @@ public final class Results{
 	 public static final PersonalityInfo[] ENFJ =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
 			"Communication",
+			"Foreign Languages",
 			"Psychology",
 			"Management",
 			"Marketing",
 			"Public Relations",
-			"Urban Studies",
-			"Foreign Languages"}),
+			"Urban Studies"}),
 			EvalType.MAJORS),
 	 	 
 		 new PersonalityInfo(Arrays.asList(new String[] {
@@ -455,13 +454,13 @@ public final class Results{
 
 	 public static final PersonalityInfo[] ENTJ =  new PersonalityInfo[]{
 		 new PersonalityInfo(Arrays.asList(new String[] {
+		 	"Anthropology",
 			"Economics",
-		 	"Secondary Education (AYA)",
-		 	"Management",
 		 	"International Business",
+		 	"Management",
 		 	"Political Science",
-		 	"Sociology",
-		 	"Anthropology"}),
+		 	"Secondary Education",
+		 	"Sociology"}),
 		 	EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
