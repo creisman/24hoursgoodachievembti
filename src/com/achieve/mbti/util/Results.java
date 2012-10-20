@@ -1,20 +1,39 @@
 package com.achieve.mbti.util;
 import java.util.*;
+
+/**
+ * Use the Results class to map MBTI personality-type strings to a collection of 
+ * personality evaluations 
+ */
 public final class Results{
 	
-	 //map from personality types to evaluations
-	//this map is initialized in a static initializer at the end of this file
+	/**
+	 * A map whose keys are MBTI personality-type strings 
+	 * and whose values are a collection of personality evaluations.
+	 * This map is initialized in a static initializer at the end of this file
+	 */	
 	 private static Map<String, PersonalityInfo[]> personalityToEval;
 	 
-	 //class constants for array indexes
+	 /**
+	  * Class constants for array indexes. 
+	  * Use these constants to access the elements in the array returned by getPrimaryEval 
+	  */
 	 public static final int MAJORS_INDEX = 0;
 	 public static final int FACTS_INDEX = 1;
 	 
+	 /**
+	  * Differentiates between types of evaluations
+	  * @see PersonalityInfo
+	  */
 	 public enum EvalType {
 		 MAJORS,
 		 FACTS
 	 }
 	 
+	 /**
+	  * A container class for a list of evaluation strings. 
+	  * The feedbackType field describes the type of evaluation strings
+	  */
 	 public static final class PersonalityInfo {
 		 public final List<String> info;
 		 
@@ -39,11 +58,8 @@ public final class Results{
 		 return personalityToEval.get(personality);
 	 }
 	 
-	 // PersonalityInfo pi = get it somehow.
-	 //	if (pi.evalType == EvalType.MAJORS) {
-	 //		process the list as if it is a list of majors
-	 //	} else 
-	 //
+	 //The following are the evaluations for all the personality types
+	 
 	 public static final Results.PersonalityInfo[] ISTJ = new Results.PersonalityInfo[]{
 		 new Results.PersonalityInfo(Arrays.asList(new String[] {
 		    "Accounting",
@@ -480,8 +496,10 @@ public final class Results{
 	 
 	//static initializer
 		 static{
+			 //initializes the map
 			 personalityToEval = new Hashtable<String, PersonalityInfo[]>();
-			 //maps personality strings to their corresponding evaluation strings
+			 
+			 //create association between personality strings and their corresponding evaluations
 			 personalityToEval.put("ISTJ", ISTJ);
 			 personalityToEval.put("ISFJ", ISFJ);
 			 personalityToEval.put("INFJ", INFJ);
