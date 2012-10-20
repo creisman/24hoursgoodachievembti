@@ -15,8 +15,9 @@ function initialize() {
 		// If it doesn't validate then don't submit.
 		if(!validate()) {
 			e.preventDefault();
-			err.innerHTML = "Please make sure you have picked your "
-				+ "personality type and percentage (0-100) for each field.";
+			err.innerHTML = "Please make sure you have picked a " +
+				"personality type and percentage between 0 and 100 for each " +
+				"field.";
 			return false;
 		}
 		
