@@ -61,25 +61,16 @@
 			 	} else {
 		 			//POST method is used and all fields are validated
 			 		%>
-			
-					<p>Your personality type is:</p>
-					<%-- print personality types and percentages here --%>
-					<%
-					for(int i = 0; i < 4; i++){
-						%>
-						<p><%= selections[i] %></p>
-						<%
-					}
-					%>
-				
-			
+					  <p>Your personality type is:</p>
 					<%
 						//personality string (a concatenation of the four personality dimensions)
 						String personality = "";
 						for(int i = 0; i < 4; i++){
 							personality += selections[i];
 						}
-						
+          %>
+          <%= personality %>
+					<%
 						//array storing evaluation objects for this type of personality
 						//use MAJORS_INDEX and FACTS_INDEX (class constants in Results)
 						//to access the majors list and the facts list
