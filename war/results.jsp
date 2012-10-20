@@ -62,7 +62,7 @@
 		 			//POST method is used and all fields are validated
 			 		%>
 					<div id="personalitytype" class="container">	
-						<h1>Your personality type is:</h1>
+						<h1 id="">Your Personality Report</h1>
 						<%
 							//personality string (a concatenation of the four personality dimensions)
 							String personality = "";
@@ -71,6 +71,7 @@
 							}
 						%>
 						<h1 id="personality"><%= personality %><h1>
+						<div id="topline" class="line"></div>
 					</div>
 					<%
 						//array storing evaluation objects for this type of personality
