@@ -62,11 +62,11 @@
 		 			//POST method is used and all fields are validated
 			 		%>
 					<div id="personalitytype" class="container">	
-						<h1 id="">Your Personality Report</h1>
+						<h1>Your Personality Report</h1>
 						<%
 							//personality string (a concatenation of the four personality dimensions)
 							String personality = "";
-							for(int i = 0; i < 4; i++){
+							for (int i = 0; i < 4; i++){
 								personality += selections[i];
 							}
 						%>
@@ -81,6 +81,9 @@
 					%>
 					
 					<div id="majors" class="container">
+						<a id="printbutton" href="javascript:window.print()" >
+							<img src="images/printbutton.gif" alt="Print">
+						</a>
 						<h2 id="majorsheader" class="header">We recommend these majors for you: </h2>
 						<div id="majorsline" class="line"></div>
 						

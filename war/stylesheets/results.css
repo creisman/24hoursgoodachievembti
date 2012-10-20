@@ -2,7 +2,7 @@ body {
 	font-family: 'Vollkorn', Georgia, Times, serif;
 	margin: 0 auto;
 	width: 65%;
-	min-width: 940px;
+	min-width: 930px;
 }
 
 .dark {
@@ -48,7 +48,7 @@ li {
 }
 
 .line, .container {
-	width: 730px;
+	width: 930px;
 }
 
 #majorsline, #nextstepsline {
@@ -65,7 +65,6 @@ li {
 
 #personality {
 	float: right;
-	margin-right: 100px;
 	margin: 0;
 	font-size: 56pt;
 	color: #60B0FF;
@@ -75,9 +74,15 @@ li {
 	overflow: auto;
 }
 
+#printbutton {
+	display: block;
+	float: right;
+	margin: 0;
+}
+
 #topline {
 	margin-top: 10px;
-	width: 525px;
+	width: 725px;
 }
 
 span {
