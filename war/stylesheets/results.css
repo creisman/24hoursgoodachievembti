@@ -2,7 +2,7 @@ body {
 	font-family: 'Vollkorn', Georgia, Times, serif;
 	margin: 0 auto;
 	width: 65%;
-	min-width: 930px;
+	min-width: 925px;
 }
 
 .dark {
@@ -48,7 +48,7 @@ li {
 }
 
 .line, .container {
-	width: 930px;
+	width: 925px;
 }
 
 #majorsline, #nextstepsline {
@@ -113,7 +113,7 @@ li {
 
 #topline {
 	margin-top: 10px;
-	width: 725px;
+	width: 720px;
 }
 
 span {
