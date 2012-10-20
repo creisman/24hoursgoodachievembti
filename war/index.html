@@ -9,40 +9,52 @@
   <h3>Personality Type Results</h3>
   <form id="mbtiform" method="POST" action="results.jsp">
     <p>
-      Extrovert or Introvert:<br />
+      <span class="type">Extrovert or Introvert</span>
+      <br />
+      <div class="options">
       <select class="typeselect" name="EorI">
         <option value="">Choose one...</option>
         <option value="E">E (Extrovert)</option>
         <option value="I">I (Introvert)</option>
       </select>
       <input class="percentbox" id="EorIPercent" maxlength="2" size="3" name="EorIPercent" required="required" />% <span id="EI">(E or I)</span>
+      </div>
     </p>
     <p>
-      Intuitive or Sensing:<br />
+      <span class="type">Intuitive or Sensing</span>
+      <br />
+      <div class="options">
       <select class="typeselect" name="SorN">
         <option value="">Choose one...</option>
         <option value="S">S (Sensing)</option>
         <option value="I">N (Intuitive)</option>
       </select>
       <input class="percentbox" id="SorNPercent" maxlength="2" size="3" name="SorNPercent" required="required" />% <span id="SN">(S or N)</span>
+    </div>
     </p>
     <p>
-      Thinking or Feeling:<br />
+      <span class="type">Thinking or Feeling</span>
+      <br />
+      <div class="options">
       <select class="typeselect" name="TorF">
         <option value="">Choose one...</option>
         <option value="T">T (Thinking)</option>
         <option value="F">F (Feeling)</option>
       </select>
       <input class="percentbox" id="TorFPercent" maxlength="2" size="3" name="TorFPercent" required="required" />% <span id="TF">(T or F)</span>
+    </div>
     </p>
     <p>
-      Judging or Perceiving:<br />
+      <span class="type">Judging or Perceiving</span>
+      <br />
+      <div class="options">
       <select class="typeselect" name="JorP">
         <option value="">Choose one...</option>
         <option value="J">J (Judging)</option>
         <option value="P">P (Perceiving)</option>
       </select>
       <input class="percentbox" id="JorPPercent" maxlength="2" size="3" name="JorPPercent" required="required" />% <span id="JP">(J or P)</span>
+    </div>
     </p>
     <div>
       <input id="submit" type="submit" value="submit" />

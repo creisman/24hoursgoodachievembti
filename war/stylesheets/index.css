@@ -3,10 +3,6 @@ form {
 	font-family: 'Vollkorn', Georgia, Times, serif;
 }
 
-.id {
-	font-size: 14pt;
-	font-weight: 500;
-}
 
 h3 {
 	display: block;
@@ -24,9 +20,18 @@ h3, #submit {
 	font-family: Ubuntu, Helvetica, Arial, sans-serif;
 }
 
+.options {
+	background-color: #DEDEDE;
+	margin: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 p {
-	font-size: 16pt;
-	font-weight: 600;
+	font-size: 14pt;
+	font-weight: 500;
+	
+	margin: 10px 0 0 0;
 }
 
 #results {
@@ -69,6 +74,10 @@ p {
     cursor: pointer;
 }
 
+.type {
+	font-size: 16pt;
+	font-weight: 600;
+}
 #submit:hover {
     border: 1px solid #FFF;
 }
