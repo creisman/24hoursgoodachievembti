@@ -11,11 +11,17 @@ function initialize() {
 	// Add form validation.
 	var form = $("#mbtiform")[0];
 	form.addEventListener("submit", function(e) {
+		var err = $("#errormessage");
 		// If it doesn't validate then don't submit.
 		if(!validate()) {
 			e.preventDefault();
+			err.innerHTML = "Please make sure you have picked your "
+				+ "personality type and percentage (0-100) for each area.";
+			return false;
 		}
-		//TODO this needs an error message.
+		
+		err.innerHTML = "";
+		return true;
 	});
 	
 	// Remove the default option from checkboxes.
