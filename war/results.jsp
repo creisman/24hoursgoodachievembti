@@ -236,12 +236,12 @@
                 if (perms.size() > 0) {
               %>
               <p class="dark">
-                <span>Disagree with you results?</span>
+                <span>Disagree with your results?</span>
                 If you disagree with your personality questionnaire results, don't fret!
                 It's <em>just</em> a questionnaire.
                 Moreover, if some of your percentages were low, then the questionnaire didn't notice a strong preference for one personality sub-type over the other.
                 This is perfectly normal.
-                It just means you your results were on the border between different personality types.
+                It just means your results were on the border between different personality types.
                 Here's a few other personality types that closely match your current results:
               </p>
               <ul class="dark similarlist">
