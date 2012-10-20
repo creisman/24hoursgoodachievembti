@@ -64,7 +64,7 @@
 								<%
 							} else {
 								%>
-								<%-- index is odd, choos dark style... --%>
+								<%-- index is odd, choose dark style... --%>
 								<li class="dark"> <%= majorsList.get(i) %> </li>
 								
 								<%
@@ -82,6 +82,7 @@
 						List<String> factsList = evalArray[Results.FACTS_INDEX].info;
 					%>
 					
+					<ul>
 					<% 
 						for(int i = 0; i < factsList.size(); i++){
 							if(i % 2 == 0){ 
@@ -92,13 +93,14 @@
 								<%
 							} else {
 								%>
-								<%-- index is odd, choos dark style... --%>
+								<%-- index is odd, choose dark style... --%>
 								<li class="dark"> <%= factsList.get(i) %> </li>
 								
 								<%
 							}
 						}
 					%>
+					</ul>
 				</div>
 				<%
 			}
