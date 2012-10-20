@@ -184,7 +184,6 @@
               //the array storing the bias percentage values
               int[] bias       = new int[4];
               boolean valid = true;
-              System.out.println(request.getParameter("EorIPercent"));
               
               //populate bias
               try {
