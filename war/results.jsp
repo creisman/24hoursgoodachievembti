@@ -242,11 +242,13 @@
                   }
                 }
               }
-              
+            %>
+            <ul class="dark similarlist">
+            <%
               for (int i = 0; i < perms.size(); i++) {
                 String perm = perms.get(i);
             %>
-							<ul class="dark">
+							
                 <li>
                   <form action="results.jsp" method="POST">
                     <input name="EorI" hidden="hidden" value="<%= perm.charAt(0) %>" />
@@ -256,8 +258,8 @@
                     <input type="submit" class="similarsubmit" value="<%= perm %>" />
                   </form>
                 </li>
-							</ul>
             <% } %>
+            </ul>
   					</div>
   				</div>
   					<%
