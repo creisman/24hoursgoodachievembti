@@ -21,9 +21,13 @@
   			if (!selections[2].equals("T") && !selections[2].equals("F")) {
           return false;
         }
-  			return !selections[3].equals("J") && !selections[3].equals("P");
+  			return !(!selections[3].equals("J") && !selections[3].equals("P"));
 			}
+    
 			
+		  public boolean validateBias(int[] bias) {
+        return true;
+      }
 
 			//checks whether a number is between 0 to 100 (inclusive)
 			public boolean isIntPercent(int num){	
@@ -42,21 +46,13 @@
 		 	} else {
 		 		//the array storing options values from the dropdown list
 		 		String[] selections = new String[4];
-		 		//the array storing the bias percentage values
-		 		String[] bias       = new String[4];
 		 		
 		 		//populate selections
 		 		selections[0] = request.getParameter("EorI");
 		 		selections[1] = request.getParameter("SorN");
 		 		selections[2] = request.getParameter("TorF");
 		 		selections[3] = request.getParameter("JorP");
-		 		
-		 		//populate bias
-		 		bias[0] = request.getParameter("EorIPercent");
-		 		bias[1] = request.getParameter("SorNPercent");
-		 		bias[2] = request.getParameter("TorFPercent");
-		 		bias[3] = request.getParameter("JorPPercent");
-		 		
+
 		 		if (!validateSelections(selections)){
 			 		%>
 			 		<%-- ERROR HANDLING HERE --%>
@@ -71,7 +67,7 @@
 					<%
 					for(int i = 0; i < 4; i++){
 						%>
-						<p><%= selections[i] %> (<%= bias[i] %> percent) </p>
+						<p><%= selections[i] %></p>
 						<%
 					}
 					%>
@@ -148,6 +144,42 @@
 						%>
 						</ul>
 					</div>
+          //the array storing the bias percentage values
+          int[] bias       = new int[4];
+          
+          //populate bias
+          try {
+            String bias = request.getParameter("EorIPercent");
+            if (bias != null) {
+              bias[0] = Integer.parseInt(bias);
+            } else {
+              return false;
+            }
+            bias = request.getParameter("SorNPercent");
+            if (bias != null) {
+              bias[1] = Integer.parseInt(bias);
+            } else {
+              return false;
+            }
+            bias = request.getParameter("TorFPercent");
+            if (bias != null) {
+              bias[2] = Integer.parseInt(bias);
+            } else {
+              return false;
+            }
+            bias = request.getParameter("JorPPercent");
+            if (bias != null) {
+              bias[3] = Integer.parseInt(bias);
+            } else {
+              return false;
+            }
+          } catch(NumberFormatException e) {
+            return false;
+          }
+          
+          if (!validateBias(bias)) {
+            return false;
+          }
 					
 					<div id="nextsteps" class="container">
 						<h2 id="nextstepsheader" class="header">Nexts step to choosing your major: </h2>
