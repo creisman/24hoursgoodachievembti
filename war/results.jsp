@@ -195,9 +195,46 @@
                 bias[3] = Integer.parseInt(request.getParameter("JorPPercent"));
               } catch(NumberFormatException e) {
                 valid = false;
+                System.out.println("test");
               }
               
               if (valid && validateBias(bias)) {
+                String allowedChars = personality;
+                final int lowBound = 15;
+                if (bias[0] < lowBound) {
+                  allowedChars += personality.charAt(0) == 'E' ? 'I' : 'E';
+                }
+                if (bias[1] < lowBound) {
+                  allowedChars += personality.charAt(1) == 'N' ? 'S' : 'N';
+                }
+                if (bias[2] < lowBound) {
+                  allowedChars += personality.charAt(2) == 'T' ? 'F' : 'T';
+                }
+                if (bias[3] < lowBound) {
+                  allowedChars += personality.charAt(3) == 'J' ? 'P' : 'J';
+                }
+                
+                List<String> perms = new ArrayList<String>(Arrays.asList(new String[] {
+                    "ENTJ", "ENTP", "ENFJ", "ENFP", "ESTJ", "ESTP", "ESFJ", "ESFP",
+                    "INTJ", "INTP", "INFJ", "INFP", "ISTJ", "ISTP", "ISFJ", "ISFP"
+                }));
+                
+                Iterator<String> itr = perms.iterator();
+                while(itr.hasNext()) {
+                  String perm = itr.next();
+                  if (perm.equals(personality)) {
+                    itr.remove();
+                    continue;
+                  }
+                  for (int i = 0; i < perm.length(); i++) {
+                    if (allowedChars.indexOf(perm.charAt(i)) == -1) {
+                      itr.remove();
+                      break;
+                    }
+                  }
+                }
+                
+                if (perms.size() > 0) {
               %>
               <p class="dark">
                 <span>Disagree with you results?</span>
@@ -208,61 +245,27 @@
                 It just means you your results were on the border between different personality types.
                 Here's a few other personality types that closely match your current results:
               </p>
-            <%
-              String allowedChars = personality;
-              final int lowBound = 15;
-              if (bias[0] < lowBound) {
-                allowedChars += personality.charAt(0) == 'E' ? 'I' : 'E';
-              }
-              if (bias[1] < lowBound) {
-                allowedChars += personality.charAt(1) == 'N' ? 'S' : 'N';
-              }
-              if (bias[2] < lowBound) {
-                allowedChars += personality.charAt(2) == 'T' ? 'F' : 'T';
-              }
-              if (bias[3] < lowBound) {
-                allowedChars += personality.charAt(3) == 'J' ? 'P' : 'J';
-              }
-              
-              List<String> perms = new ArrayList<String>(Arrays.asList(new String[] {
-                  "ENTJ", "ENTP", "ENFJ", "ENFP", "ESTJ", "ESTP", "ESFJ", "ESFP",
-                  "INTJ", "INTP", "INFJ", "INFP", "ISTJ", "ISTP", "ISFJ", "ISFP"
-              }));
-              
-              Iterator<String> itr = perms.iterator();
-              while(itr.hasNext()) {
-                String perm = itr.next();
-                if (perm.equals(personality)) {
-                  itr.remove();
-                  continue;
+              <ul class="dark similarlist">
+              <%
                 }
-                for (int i = 0; i < perm.length(); i++) {
-                  if (allowedChars.indexOf(perm.charAt(i)) == -1) {
-                    itr.remove();
-                    break;
-                  }
-                }
-              }
-            %>
-            <ul class="dark similarlist">
-            <%
-              for (int i = 0; i < perms.size(); i++) {
+                
+                for (int i = 0; i < perms.size(); i++) {
                 String perm = perms.get(i);
-            %>
-              <li>
-                <form action="results.jsp" method="POST">
-                  <input name="EorI" hidden="hidden" value="<%= perm.charAt(0) %>" />
-                  <input name="SorN" hidden="hidden" value="<%= perm.charAt(1) %>" />
-                  <input name="TorF" hidden="hidden" value="<%= perm.charAt(2) %>" />
-                  <input name="JorP" hidden="hidden" value="<%= perm.charAt(3) %>" />
-                  <input type="submit" class="similarsubmit" value="<%= perm %>" />
-                </form>
-              </li>
-            <% } %>
-            </ul>
+              %>
+                <li>
+                  <form action="results.jsp" method="POST">
+                    <input name="EorI" hidden="hidden" value="<%= perm.charAt(0) %>" />
+                    <input name="SorN" hidden="hidden" value="<%= perm.charAt(1) %>" />
+                    <input name="TorF" hidden="hidden" value="<%= perm.charAt(2) %>" />
+                    <input name="JorP" hidden="hidden" value="<%= perm.charAt(3) %>" />
+                    <input type="submit" class="similarsubmit" value="<%= perm %>" />
+                  </form>
+                </li>
+              <% } %>
+              </ul>
+            </div>
           </div>
-        </div>
-        <%
+          <%
         }
       }
     }
