@@ -27,14 +27,14 @@
 								request.getParameter("SorN") +
 								request.getParameter("TorF") +
 								request.getParameter("JorP");
-								
+			
 			//array storing evaluation objects for this type of personality
 			//use MAJORS_INDEX and FACTS_INDEX (class constants in Results)
 			//to access the majors list and the facts list
-			//Results.PersonalityInfo[] evalArray = Results.getPrimaryEval(personality);
+			Results.PersonalityInfo[] evalArray = Results.getPrimaryEval(personality);
 		%>
 		
-		<%= personality %>
+		
 		<p>We recommend these majors for you: </p>
 		
 		<%
