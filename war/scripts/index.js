@@ -37,15 +37,6 @@ function initialize() {
 			$(event.target).parents(".type").find(".percentlabel")[0].innerHTML = event.target.value;
 		})
 	});
-	
-	///TODO remove
-	var elements = $(".percentbox").each(function(index, element) {
-		element.value = 45;
-	});
-	
-	elements = $(".typeselect").each(function(index, element) {
-		element.selectedIndex = 2;
-	});
 };
 
 /*
