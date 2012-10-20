@@ -70,7 +70,7 @@
 								personality += selections[i];
 							}
 						%>
-						<h1 id="personality"><%= personality %><h1>
+						<h1 id="personality"><%= personality %></h1>
 						<div id="topline" class="line"></div>
 					</div>
 					<%
