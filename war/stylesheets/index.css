@@ -11,7 +11,7 @@ body {
 }
 
 #content {
-	margin-top: 50px;	
+	margin-top: 50px;
 }
 
 em {
@@ -81,6 +81,13 @@ img {
 	-webkit-border-radius: 4px;
 }
 
+#special {
+	display: block;
+	margin: 0;
+	padding: 0;
+	clear:both;
+}
+
 #submit {
 	float: right;
 	margin: 0 5px 5px 0;
@@ -126,4 +133,20 @@ img {
 
 #submit:hover {
 	border: 1px solid #FFF;
+}
+
+.error {
+	border: 1px solid red;
+	margin: 10px 0px;
+	padding: 15px 10px 15px 50px;
+	background-color: rgba(255, 0, 0, 50);
+	overflow: auto;
+}
+
+.error, .error img, .error p {
+	float: left;
+}
+
+.error p {
+	
 }
