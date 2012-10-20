@@ -143,19 +143,3 @@ img {
 #submit:hover {
 	border: 1px solid #FFF;
 }
-
-.error {
-	border: 1px solid red;
-	margin: 10px 0px;
-	padding: 15px 10px 15px 50px;
-	background-color: rgba(255, 0, 0, 50);
-	overflow: auto;
-}
-
-.error, .error img, .error p {
-	float: left;
-}
-
-.error p {
-	
-}
