@@ -76,8 +76,8 @@ public final class Results{
 		 	 "History",
 		 	 "Medical Technology",
 		 	 "Religious Studies",
-		 	 "Social Work"}),E
-		 	 valType.MAJORS),
+		 	 "Social Work"}),
+		 	 EvalType.MAJORS),
 	 	 
 	 	 new PersonalityInfo(Arrays.asList(new String[] {
 			 "Most important feature of an ideal job: stable and secure future.",
