@@ -36,7 +36,7 @@
 		%>
 		
 		<div id="majors" class="container">
-			<h2 id="majorsheader" class="header">We recommend these majors for you: </p>
+			<h2 id="majorsheader" class="header">We recommend these majors for you: </h2>
 			<div id="majorsline" class="line"></div>
 			
 			<%
@@ -58,7 +58,7 @@
 		</div>
 		
 		<div id="facts" class="container">
-			<h2 id="factsheader" class="header">Here are some facts related to your personality: </p>
+			<h2 id="factsheader" class="header">Here are some facts related to your personality: </h2>
 			<div id="factsline" class="line"></div>
 			<%
 				//the list of facts related to this personality
