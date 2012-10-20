@@ -4,6 +4,10 @@ import java.util.*;
 /**
  * Use the Results class to map MBTI personality-type strings to a collection of 
  * personality evaluations 
+ * 
+ * Evaluations sources:
+ * http://myersbriggs.tumblr.com/post/6902149570/mbti-facts
+ * http://www.utoledo.edu/success/career/pdfs/MBTI_TYPE_TABLE_Majors_2.pdf
  */
 public final class Results{
 	
