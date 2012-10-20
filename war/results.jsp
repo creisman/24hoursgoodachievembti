@@ -10,6 +10,7 @@
 
 	<body>
 		
+		
 		<p>Your personality type is:</p>
 		<p>${param.EorI}
 			(<%= request.getParameter("EorIPercent") %> percent) </p>
@@ -35,7 +36,7 @@
 		%>
 		
 		<div id="majors" class="container">
-			<p id="majorsheader" class="header">We recommend these majors for you: </p>
+			<h2 id="majorsheader" class="header">We recommend these majors for you: </p>
 			<div id="majorsline" class="line"></div>
 			
 			<%
@@ -57,7 +58,7 @@
 		</div>
 		
 		<div id="facts" class="container">
-			<p id="factsheader" class="header">Here are some facts related to your personality: </p>
+			<h2 id="factsheader" class="header">Here are some facts related to your personality: </p>
 			<div id="factsline" class="line"></div>
 			<%
 				//the list of facts related to this personality
