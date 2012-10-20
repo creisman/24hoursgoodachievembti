@@ -195,7 +195,6 @@
                 bias[3] = Integer.parseInt(request.getParameter("JorPPercent"));
               } catch(NumberFormatException e) {
                 valid = false;
-                System.out.println("test");
               }
               
               if (valid && validateBias(bias)) {
