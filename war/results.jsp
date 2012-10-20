@@ -138,87 +138,125 @@
 						%>
 						</ul>
 					</div>
-          <%
-          //the array storing the bias percentage values
-          int[] bias       = new int[4];
-          boolean valid = true;
-          
-          //populate bias
-          try {
-            String biasStr = request.getParameter("EorIPercent");
-            if (biasStr != null) {
-              bias[0] = Integer.parseInt(biasStr);
-            }
-            biasStr = request.getParameter("SorNPercent");
-            if (biasStr != null) {
-              bias[1] = Integer.parseInt(biasStr);
-            }
-            biasStr = request.getParameter("TorFPercent");
-            if (biasStr != null) {
-              bias[2] = Integer.parseInt(biasStr);
-            }
-            biasStr = request.getParameter("JorPPercent");
-            if (biasStr != null) {
-              bias[3] = Integer.parseInt(biasStr);
-            }
-          } catch(NumberFormatException e) {
-            valid = false;
-          }
-          
-          if (valid && validateBias(bias)) {
+  				<div id="nextsteps" class="container">
+  					<h2 id="nextstepsheader" class="header">Next Steps to Choosing a Major: </h2>
+  					<div id="nextstepsline" class="line"></div>
+    					<div id="nextstepstext">
+  						<p class="light">
+  							Hopefully the above recommendations give you some potential majors to consider.
+  							Here are some additional ideas to further expand your search for the perfect major:
+  						</p>
+  						<p class="dark">
+  							<span>Talk to your counselor or advisor.</span>
+  							They're experts at this.
+  							They know what it takes to do certain majors.
+  							So, schedule a meeting with your counselor or advisor.
+  							Tell them your strengths and weaknesses as well as your interests.
+  							Be specific and honest.
+  							They'll be able to recommend specific courses or majors that excite you.
+  						</p>
+  						<p class="light">
+  							<span>Ask current college students.</span>
+  							They are the real experts, especially the upperclassman.
+  							Best of all, they're all choosing (or have already chosen) their majors, too.
+  							So, they can share the questions they considered during their decision-making process, and how they eventually made their decision.
+  							If you don't know any college students, consider searching online for students posting their opinions/experiences.
+  						</p>
+  						<p class="dark">
+  							<span>Talk to professionals.</span>
+  							Ask them exactly what their jobs entail and how their majors relate to their careers.
+  							You may be surprised to learn that some of them didn't even major in anything related to their current profession.
+  							Learning about the paths others took to get to where they are can be very valuable.
+  						</p>
+  						<p class="light">
+  							<span>Relax.</span>
+  							College can (and probably will) be very stressful at times.
+  							Choosing your major is often the first exposure high school students get to such levels of stress.
+  							Remember, at the end of the day, your major is not you.
+  							It does not determine your life.
+  							Choose a subject that interests you and relates to your long-term career goals.
+  							You can always change majors, change careers, or go back to school and study another subject.
+  						</p>
+              <%
+              //the array storing the bias percentage values
+              int[] bias       = new int[4];
+              boolean valid = true;
+              System.out.println(request.getParameter("EorIPercent"));
+              
+              //populate bias
+              try {
+            	  bias[0] = Integer.parseInt(request.getParameter("EorIPercent"));
+                bias[1] = Integer.parseInt(request.getParameter("SorNPercent"));
+                bias[2] = Integer.parseInt(request.getParameter("TorFPercent"));
+                bias[3] = Integer.parseInt(request.getParameter("JorPPercent"));
+              } catch(NumberFormatException e) {
+                valid = false;
+              }
+              
+              if (valid && validateBias(bias)) {
+              %>
+  						<p class="dark">
+  							<span>Disagree with you results?</span>
+  							If you disagree with your personality questionnaire results, don't fret!
+  							It's <em>just</em> a questionnaire.
+  							Moreover, if some of your percentages were low, then the questionnaire didn't notice a strong preference for one personality sub-type over the other.
+  							This is perfectly normal.
+  							It just means you your results were on the border between different personality types.
+  							Here's a few other personality types that closely match your current results:
+              </p>
+            <%
+              String allowedChars = personality;
+              final int lowBound = 15;
+              if (bias[0] < lowBound) {
+                allowedChars += personality.charAt(0) == 'E' ? 'I' : 'E';
+              }
+              if (bias[1] < lowBound) {
+                allowedChars += personality.charAt(1) == 'N' ? 'S' : 'N';
+              }
+              if (bias[2] < lowBound) {
+                allowedChars += personality.charAt(2) == 'T' ? 'F' : 'T';
+              }
+              if (bias[3] < lowBound) {
+                allowedChars += personality.charAt(3) == 'J' ? 'P' : 'J';
+              }
+              
+              List<String> perms = new ArrayList<String>(Arrays.asList(new String[] {
+            		  "ENTJ", "ENTP", "ENFJ", "ENFP", "ESTJ", "ESTP", "ESFJ", "ESFP",
+            		  "INTJ", "INTP", "INFJ", "INFP", "ISTJ", "ISTP", "ISFJ", "ISFP"
+              }));
+              
+              Iterator<String> itr = perms.iterator();
+              while(itr.hasNext()) {
+                String perm = itr.next();
+                if (perm.equals(personality)) {
+                  itr.remove();
+                  continue;
+                }
+                for (int i = 0; i < perm.length(); i++) {
+                  if (allowedChars.indexOf(perm.charAt(i)) == -1) {
+                    itr.remove();
+                    break;
+                  }
+                }
+              }
+              
+              for (int i = 0; i < perms.size(); i++) {
+                String perm = perms.get(i);
             %>
-				<div id="nextsteps" class="container">
-					<h2 id="nextstepsheader" class="header">Next Steps to Choosing a Major: </h2>
-					<div id="nextstepsline" class="line"></div>
-  					<div id="nextstepstext">
-						<p class="light">
-							Hopefully the above recommendations give you some potential majors to consider.
-							Here are some additional ideas to further expand your search for the perfect major:
-						</p>
-						<p class="dark">
-							<span>Talk to your counselor or advisor.</span>
-							They're experts at this.
-							They know what it takes to do certain majors.
-							So, schedule a meeting with your counselor or advisor.
-							Tell them your strengths and weaknesses as well as your interests.
-							Be specific and honest.
-							They'll be able to recommend specific courses or majors that excite you.
-						</p>
-						<p class="light">
-							<span>Ask current college students.</span>
-							They are the real experts, especially the upperclassman.
-							Best of all, they're all choosing (or have already chosen) their majors, too.
-							So, they can share the questions they considered during their decision-making process, and how they eventually made their decision.
-							If you don't know any college students, consider searching online for students posting their opinions/experiences.
-						</p>
-						<p class="dark">
-							<span>Talk to professionals.</span>
-							Ask them exactly what their jobs entail and how their majors relate to their careers.
-							You may be surprised to learn that some of them didn't even major in anything related to their current profession.
-							Learning about the paths others took to get to where they are can be very valuable.
-						</p>
-						<p class="light">
-							<span>Relax.</span>
-							College can (and probably will) be very stressful at times.
-							Choosing your major is often the first exposure high school students get to such levels of stress.
-							Remember, at the end of the day, your major is not you.
-							It does not determine your life.
-							Choose a subject that interests you and relates to your long-term career goals.
-							You can always change majors, change careers, or go back to school and study another subject.
-						</p>
-						<p class="dark">
-							<span>Disagree with you results?</span>
-							If you disagree with your personality questionnaire results, don't fret!
-							It's <em>just</em> a questionnaire.
-							Moreover, if some of your percentages were low, then the questionnaire didn't notice a strong preference for one personality sub-type over the other.
-							This is perfectly normal.
-							It just means you your results were on the border between different personality types.
-							Here's a few other personality types that closely match your current results:
-							<ul>
+							<ul class="dark">
+                <li>
+                  <form action="results.jsp" method="POST">
+                    <input name="EorI" hidden="hidden" value="<%= perm.charAt(0) %>" />
+                    <input name="SorN" hidden="hidden" value="<%= perm.charAt(1) %>" />
+                    <input name="TorF" hidden="hidden" value="<%= perm.charAt(2) %>" />
+                    <input name="JorP" hidden="hidden" value="<%= perm.charAt(3) %>" />
+                    <input type="submit" class="similarsubmit" value="<%= perm %>" />
+                  </form>
+                </li>
 							</ul>
-						</p>
-					</div>
-				</div>
+            <% } %>
+  					</div>
+  				</div>
   					<%
           }
 				}
