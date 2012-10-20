@@ -1,27 +1,36 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
-<!-- above set at the top of the file will set     -->
-<!-- the browser's rendering engine into           -->
-<!-- "Quirks Mode". Replacing this declaration     -->
-<!-- with a "Standards Mode" doctype is supported, -->
-<!-- but may lead to some differences in layout.   -->
-
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Hello App Engine</title>
-  </head>
-
-  <body>
-    <h1>Hello App Engine!</h1>
-	
-    <table>
-      <tr>
-        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
-      </tr>
-      <tr>
-        <td><a href="achievembti">AchieveMbti</a></td>
-      </tr>
-    </table>
-  </body>
-</html>
+<!doctype html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Achieve - Find Your Major</title>
+<form>
+  <p>
+    Extrovert or Introvert:<br /> <select name="EorI">
+      <option value="">Choose one...</option>
+      <option value="Extrovert">E (Extrovert)</option>
+      <option value="Introvert">I (Introvert)</option>
+    </select> <input maxlength="2" size="2" />% <span id="EI">(E or I)</span>
+  </p>
+  <p>
+    Intuitive or Sensing:<br /> <select name="SorN">
+      <option value="">Choose one...</option>
+      <option value="Sensing">S (Sensing)</option>
+      <option value="Intuitive">N (Intuitive)</option>
+    </select> <input maxlength="2" size="2" />% <span id="SN">(S or N)</span>
+  </p>
+  <p>
+    Thinking or Feeling:<br /> <select name="TorF">
+      <option value="">Choose one...</option>
+      <option value="Thinking">T (Thinking)</option>
+      <option value="Feeling">F (Feeling)</option>
+    </select> <input maxlength="2" size="2" />% <span id="TF">(T or F)</span>
+  </p>
+  <p>
+    Judging or Perceiving:<br /> <select name="JorP">
+      <option value="">Choose one...</option>
+      <option value="Judging">J (Judging)</option>
+      <option value="Perceiving">P (Perceiving)</option>
+    </select> <input maxlength="2" size="2" />% <span id="JP">(J or P)</span>
+  </p>
+  <div>
+    <input type="submit" value="submit" />
+  </div>
+</form>
