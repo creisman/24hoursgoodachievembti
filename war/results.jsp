@@ -34,44 +34,48 @@
 			Results.PersonalityInfo[] evalArray = Results.getPrimaryEval(personality);
 		%>
 		
+		<div id="majors" class="container">
+			<p id="majorsheader" class="header">We recommend these majors for you: </p>
+			<div id="majorsline" class="line"></div>
+			
+			<%
+				//the list of recommended majors for this personality
+				List<String> majorsList = evalArray[Results.MAJORS_INDEX].info;
+			%>
+			
+			<ul>		
+			<% 
+				for(String major : majorsList){ 
+					%>
+					
+					<li> <%= major %> </li>
+					
+					<%
+				}
+			%>
+			</ul>
+		</div>
 		
-		<p>We recommend these majors for you: </p>
-		
-		<%
-			//the list of recommended majors for this personality
-			List<String> majorsList = evalArray[Results.MAJORS_INDEX].info;
-		%>
-		
-		<ul>		
-		<%
-			for(String major : majorsList){ 
-				%>
-				
-				<li> <%= major %> </li>
-				
-				<%
-			}
-		%>
-		</ul>
-
-		<p>Here are some facts related to your personality: </p>
-		
-		<%
-			//the list of facts related to this personality
-			List<String> factsList = evalArray[Results.FACTS_INDEX].info;
-		%>
-		
-		<ul>
-		<%
-			for(String fact : factsList){ 
-				%>
-				
-				<li> <%= fact %> </li>
-				
-				<%
-			}
-		%>
-		</ul>
+		<div id="facts" class="container">
+			<p id="factsheader" class="header">Here are some facts related to your personality: </p>
+			<div id="factsline" class="line"></div>
+			<%
+				//the list of facts related to this personality
+				List<String> factsList = evalArray[Results.FACTS_INDEX].info;
+			%>
+			
+			<ul>
+			<%
+				for(String fact : factsList){ 
+					%>
+					
+					<li> <%= fact %> </li>
+					
+					<%
+				}
+			%>
+			</ul>
+		</div>
 		
 	</body>
 </html>
