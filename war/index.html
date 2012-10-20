@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>Achieve - Find Your Major</title>
-<script type="text/javascript" src="test.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/index.js"></script>
 <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 <div id="input">
   <h3>Personality Type Results</h3>
   <form id="mbtiform" method="POST" action="results.jsp">
     <p>
-      Extrovert or Introvert:<br /> <select name="EorI">
+      Extrovert or Introvert:<br />
+      <select class="typeselect" name="EorI">
         <option value="">Choose one...</option>
-        <option value="Extrovert">E (Extrovert)</option>
-        <option value="Introvert">I (Introvert)</option>
+        <option value="E">E (Extrovert)</option>
+        <option value="I">I (Introvert)</option>
       </select>
-      <input id="EorIPercent" maxlength="2" size="2" name="EorIPercent" />% <span id="EI">(E or I)</span>
+      <input class="percentbox" id="EorIPercent" maxlength="2" size="3" name="EorIPercent" required="required" />% <span id="EI">(E or I)</span>
     </p>
     <p>
-      Intuitive or Sensing:<br /> <select name="SorN">
+      Intuitive or Sensing:<br />
+      <select class="typeselect" name="SorN">
         <option value="">Choose one...</option>
-        <option value="Sensing">S (Sensing)</option>
-        <option value="Intuitive">N (Intuitive)</option>
+        <option value="S">S (Sensing)</option>
+        <option value="I">N (Intuitive)</option>
       </select>
-      <input id="SorNPercent" maxlength="2" size="2" name="SorNPercent" />% <span id="SN">(S or N)</span>
+      <input class="percentbox" id="SorNPercent" maxlength="2" size="3" name="SorNPercent" required="required" />% <span id="SN">(S or N)</span>
     </p>
     <p>
-      Thinking or Feeling:<br /> <select name="TorF">
+      Thinking or Feeling:<br />
+      <select class="typeselect" name="TorF">
         <option value="">Choose one...</option>
-        <option value="Thinking">T (Thinking)</option>
-        <option value="Feeling">F (Feeling)</option>
+        <option value="T">T (Thinking)</option>
+        <option value="F">F (Feeling)</option>
       </select>
-      <input id="TorFPercent" maxlength="2" size="2" name="TorFPercent" />% <span id="TF">(T or F)</span>
+      <input class="percentbox" id="TorFPercent" maxlength="2" size="3" name="TorFPercent" required="required" />% <span id="TF">(T or F)</span>
     </p>
     <p>
-      Judging or Perceiving:<br /> <select name="JorP">
+      Judging or Perceiving:<br />
+      <select class="typeselect" name="JorP">
         <option value="">Choose one...</option>
-        <option value="Judging">J (Judging)</option>
-        <option value="Perceiving">P (Perceiving)</option>
+        <option value="J">J (Judging)</option>
+        <option value="P">P (Perceiving)</option>
       </select>
-      <input id="JorPPercent" maxlength="2" size="2" name="JorPPercent" />% <span id="JP">(J or P)</span>
+      <input class="percentbox" id="JorPPercent" maxlength="2" size="3" name="JorPPercent" required="required" />% <span id="JP">(J or P)</span>
     </p>
     <div>
       <input id="submit" type="submit" value="submit" />
     </div>
-  </div>
-</form>
+  </form>
+</div>
