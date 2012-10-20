@@ -147,72 +147,64 @@
           <%
           //the array storing the bias percentage values
           int[] bias       = new int[4];
+          boolean valid = true;
           
           //populate bias
           try {
             String biasStr = request.getParameter("EorIPercent");
             if (biasStr != null) {
               bias[0] = Integer.parseInt(biasStr);
-            } else {
-              return;
             }
             biasStr = request.getParameter("SorNPercent");
             if (biasStr != null) {
               bias[1] = Integer.parseInt(biasStr);
-            } else {
-              return;
             }
             biasStr = request.getParameter("TorFPercent");
             if (biasStr != null) {
               bias[2] = Integer.parseInt(biasStr);
-            } else {
-              return;
             }
             biasStr = request.getParameter("JorPPercent");
             if (biasStr != null) {
               bias[3] = Integer.parseInt(biasStr);
-            } else {
-              return;
             }
           } catch(NumberFormatException e) {
-            return;
+            valid = false;
           }
           
-          if (!validateBias(bias)) {
-            return;
+          if (valid && validateBias(bias)) {
+            %>
+  					
+  					<div id="nextsteps" class="container">
+  						<h2 id="nextstepsheader" class="header">Nexts step to choosing your major: </h2>
+  						<div id="nextstepsline" class="line"></div>
+  							<p>
+  								Hopefully the above reccomendations give you some potential majors to consider.
+  								Here are some additional ideas to further expand your search for the perfect major.
+  							</p>
+  							<p>
+  								<span>Talk to your counselor or advisor.</span>
+  								They're experts at this.
+  								They know what it takes to do certain majors.
+  								So, schedule a meeting with your counselor or advisor.
+  								Tell them your strengths and weaknesses as well as your interests.
+  								Be specific and honest.
+  								They'll be able to recommend specific courses or majors that excite you.
+  							</p>
+  							<p>
+  								If you disagree with your personality questionnaire results, don't fret!
+  								It's <em>just</em> a questionnaire.
+  								Moreover, if some of your percentages were low, then the questionnaire didn't notice a strong preference for one personality sub-type over the other.
+  								This is perfectly normal.
+  								It just means you your results were on the border between different personality types.
+  								Here's a few other personality types that closely match your current results:
+  								<ul>
+  								</ul>
+  							<p>
+  								
+  							</p>
+  					</div>
+  					<%
           }
-          %>
-					
-					<div id="nextsteps" class="container">
-						<h2 id="nextstepsheader" class="header">Nexts step to choosing your major: </h2>
-							<div id="nextstepsline" class="line"></div>
-								<p>
-									Hopefully the above reccomendations give you some potential majors to consider.
-									Here are some additional ideas to further expand your search for the perfect major.
-								</p>
-								<p>
-									<span>Talk to your counselor or advisor.</span>
-									They're experts at this.
-									They know what it takes to do certain majors.
-									So, schedule a meeting with your counselor or advisor.
-									Tell them your strengths and weaknesses as well as your interests.
-									Be specific and honest.
-									They'll be able to recommend specific courses or majors that excite you.
-								</p>
-								<p>
-									If you disagree with your personality questionnaire results, don't fret!
-									It's <em>just</em> a questionnaire.
-									Moreover, if some of your percentages were low, then the questionnaire didn't notice a strong preference for one personality sub-type over the other.
-									This is perfectly normal.
-									It just means you your results were on the border between different personality types.
-									Here's a few other personality types that closely match your current results:
-									<ul>
-									</ul>
-								<p>
-									
-								</p>							
-					</div>
-					<%
 				}
 		 	}
 		%>
