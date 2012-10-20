@@ -33,9 +33,7 @@ h1 {
 
 h2 {
 	display: block;
-	padding-left: 20px;
-	padding-top: 1.5px;
-	padding-bottom: 2.5px;
+	padding: 1.5px 0px 2.5px 20px;
 	margin: 0;
 	border-bottom: 5px solid #DEDEDE;
 
@@ -85,8 +83,7 @@ img {
 
 #submit {
 	float: right;
-	margin-right: 5px;
-	margin-bottom: 5px;
+	margin: 0 5px 5px 0;
  
  	font-weight: 700;
 	font-size: 14pt;
@@ -128,5 +125,5 @@ img {
 }
 
 #submit:hover {
-  border: 1px solid #FFF;
+	border: 1px solid #FFF;
 }
